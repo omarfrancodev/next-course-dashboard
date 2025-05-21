@@ -2,20 +2,27 @@ import Image from "next/image"
 import { FaCalculator, FaReact } from "react-icons/fa6"
 import { IoBrowsersOutline } from "react-icons/io5"
 import { SidebarMenuItem } from "./SidebarMenuItem/SidebarMenuItem"
+import { GiPokecog } from "react-icons/gi"
 
 
 const menuItems = [
     {
         path: "/dashboard/main",
-        icon: <IoBrowsersOutline width={40} height={40} />,
+        icon: <IoBrowsersOutline size={40} />,
         title: "Dashboard",
         subtitle: "Data Overview"
     },
     {
         path: "/dashboard/counter",
-        icon: <FaCalculator width={40} height={40} />,
+        icon: <FaCalculator size={40} />,
         title: "Counter",
         subtitle: "Estado local"
+    },
+    {
+        path: "/dashboard/pokemons",
+        icon: <GiPokecog size={40} />,
+        title: "Pokemons",
+        subtitle: "Listado de Pokemons"
     }
 ]
 
