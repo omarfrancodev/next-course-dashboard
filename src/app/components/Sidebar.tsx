@@ -1,7 +1,6 @@
 import Image from "next/image"
-import path from "path"
 import { FaCalculator, FaReact } from "react-icons/fa6"
-import { IoBrowsers, IoBrowsersOutline } from "react-icons/io5"
+import { IoBrowsersOutline } from "react-icons/io5"
 import { SidebarMenuItem } from "./SidebarMenuItem/SidebarMenuItem"
 
 
