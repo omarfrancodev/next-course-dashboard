@@ -7,3 +7,6 @@ export type { Pokemon } from './interfaces/pokemon';
 // Components
 export { PokemonsGrid } from './components/PokemonsGrid'
 export { PokemonCard } from './components/PokemonCard';
+
+// Functions
+export { getPokemons } from './store/store'

@@ -23,7 +23,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
                 <div className="flex flex-col w-full gap-2">
                     <span className="text-white font-bold text-lg capitalize">{name}</span>
                     <Link
-                        href={`/dashboard/pokemon/${id}`}
+                        href={`/dashboard/pokemons/${name}`}
                         prefetch={true}
                         className="border rounded-full py-2 px-4 font-semibold text-sm text-slate-200 hover:bg-slate-500 cursor-pointer">
                         Más información
