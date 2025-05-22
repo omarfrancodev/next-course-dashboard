@@ -28,7 +28,7 @@ const menuItems = [
 
 export const Sidebar = () => {
     return (
-        <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 w-[350px] left-0 overflow-y-scroll">
+        <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 w-[350px] left-0">
             <div id="logo" className="my-4 px-6">
                 <h1 className="flex items-center text-lg md:text-2xl font-bold text-white">
                     <FaReact className="mr-2" />

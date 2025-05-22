@@ -11,7 +11,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
     const { id, name } = pokemon;
 
     return (
-        <div className="flex flex-col m-3 drop-shadow-md drop-shadow-slate-500 rounded-lg hover:scale-105 transition-all duration-150">
+        <div className="flex flex-col m-3 drop-shadow-md drop-shadow-slate-400 rounded-lg hover:scale-105 transition-all duration-150">
             <div className="flex flex-col justify-end items-center min-h-64 rounded-t-lg p-6 bg-[#1b232c] gap-4 text-center">
                 <Image
                     className="max-w-[100px] max-h-[100px]"
