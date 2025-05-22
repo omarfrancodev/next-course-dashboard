@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Params } from "next/dist/server/request/params";
 import { SearchParams } from "next/dist/server/request/search-params";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 interface Props {
     params: Promise<Params>;
@@ -11,23 +12,25 @@ interface Props {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
 
-    const params = await props.params;
-    const paramId = String(params.id);
+    try {
 
-    const pokemon: Pokemon = await getPokemon(paramId);
+        const params = await props.params;
+        const paramId = String(params.id);
 
-    if (!pokemon) {
+        const pokemon: Pokemon = await getPokemon(paramId);
+
+        const { id, name } = pokemon;
+
         return {
-            title: `Pokemon not found`,
-            description: `Pokemon not found`,
+            title: `Pokemon #${id} - ${name}`,
+            description: `Página del Pokémon ${name}`,
         }
-    }
-
-    const { id, name } = pokemon;
-
-    return {
-        title: `Pokemon #${id} - ${name}`,
-        description: `Página del Pokémon ${name}`,
+    } catch (error) {
+        console.error(error);
+        return {
+            title: 'Pokemon Page',
+            description: 'Pagina del Pokémon',
+        }
     }
 
 }
@@ -40,7 +43,8 @@ const getPokemon = async (id: string): Promise<Pokemon> => {
                 revalidate: 60
             }
         }
-    ).then(res => res.json());
+    ).then(res => res.json())
+        .catch(err => notFound());
 
     return pokemon;
 }
@@ -53,7 +57,7 @@ export default async function PokemonPage(props: Props) {
 
 
     return (
-        <div className="flex mt-5 flex-col items-center text-slate-800">
+        <div className="flex flex-col items-center text-slate-800 m-4">
             <div className="relative flex flex-col items-center rounded-[20px] w-[700px] mx-auto bg-white bg-clip-border  shadow-lg  p-3">
                 <div className="mt-2 mb-8 w-full">
                     <h1 className="px-2 text-xl font-bold text-slate-700 capitalize">
