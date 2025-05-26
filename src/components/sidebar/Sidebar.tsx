@@ -3,7 +3,6 @@ import { FaCalculator, FaReact } from "react-icons/fa6"
 import { IoBrowsersOutline } from "react-icons/io5"
 import { SidebarMenuItem } from "./SidebarMenuItem/SidebarMenuItem"
 import { GiPokecog } from "react-icons/gi"
-import path from "path"
 import { HiHeart } from "react-icons/hi"
 
 
