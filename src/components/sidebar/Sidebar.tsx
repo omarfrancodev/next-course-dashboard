@@ -3,6 +3,7 @@ import { FaCalculator, FaReact } from "react-icons/fa6"
 import { IoBrowsersOutline } from "react-icons/io5"
 import { SidebarMenuItem } from "./SidebarMenuItem/SidebarMenuItem"
 import { GiPokecog } from "react-icons/gi"
+import { HiHeart } from "react-icons/hi"
 
 
 const menuItems = [
@@ -23,6 +24,12 @@ const menuItems = [
         icon: <GiPokecog size={40} />,
         title: "Pokemons",
         subtitle: "Listado de Pokemons"
+    },
+    {
+        path: "/dashboard/favorites",
+        icon: <HiHeart size={40} />,
+        title: "Favorites",
+        subtitle: "Favoritos Global State"
     }
 ]
 
