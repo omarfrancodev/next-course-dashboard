@@ -1,6 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, Middleware } from '@reduxjs/toolkit';
 import counterReducer from './counter/counterSlice';
 import pokemonsReducer from './pokemons/pokemonsSlice';
+import { localStorageMiddleware } from './middlewares/localstoreage-middleware';
 
 export const makeStore = () => {
     return configureStore({
@@ -8,6 +9,8 @@ export const makeStore = () => {
             counter: counterReducer,
             pokemonsFav: pokemonsReducer
         },
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+            .concat(localStorageMiddleware as Middleware)
     })
 
 }
