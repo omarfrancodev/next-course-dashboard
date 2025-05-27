@@ -32,7 +32,7 @@ const pokemonsSlice = createSlice({
                 state[id] = pokemon;
             }
 
-            localStorage.setItem('favorites-pokemons', JSON.stringify(state));
+            // localStorage.setItem('favorites-pokemons', JSON.stringify(state));
         }
     }
 });
